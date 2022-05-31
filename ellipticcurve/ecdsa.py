@@ -28,7 +28,7 @@ class Ecdsa:
 
     @classmethod
     def verify(cls, message, signature, publicKey, hashfunc=sha256):
-        byteMessage = hashfunc(toBytes(message)).digest()
+        byteMessage = hashfunc(message).digest()
         numberMessage = numberFromByteString(byteMessage)
         curve = publicKey.curve
         r = signature.r
